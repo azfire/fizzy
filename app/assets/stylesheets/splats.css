@@ -69,7 +69,7 @@
 .splat__bubble {
   aspect-ratio: 1 / 0.96;
   background-color: var(--color-bg);
-  background-image: radial-gradient(90% 90% at 50% 50%, #FFFFFF80 0%, #ffffff90 45%, var(--splat-color) 70%);
+  background-image: radial-gradient(90% 90% at 50% 50%, #FFFFFFFF 0%, #ffffff90 45%, var(--splat-color) 70%);
   background-position: 0;
   background-size: 100%;
   block-size: 95%;
@@ -79,11 +79,20 @@
   transform: rotate(var(--splat-rotate));
   z-index: -1;
 
+  a {
+    color: var(--splat-color);
+  }
+
   &.splat__category {
+    aspect-ratio: unset;
     inset: auto auto 3cqi 3cqi;
 
     + & {
-      inset: auto auto 0 24cqi;
+      inset: auto auto -5cqi 26cqi;
+
+      + & {
+        inset: auto auto -5cqi 52cqi;
+      }
     }
   }
 
@@ -104,6 +113,12 @@
     position: absolute;
     scale: 1;
     transform: none;
+  }
+
+  &.splat__category-new {
+    .windshield & {
+      display: none;
+    }
   }
 }
 

@@ -239,3 +239,8 @@
 /* Visibility */
 [hidden] { display: none; }
 [contents] { display: contents; }
+
+/* Turbo */
+turbo-frame {
+  display: contents;
+}

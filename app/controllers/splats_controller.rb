@@ -1,5 +1,5 @@
 class SplatsController < ApplicationController
-  before_action :set_splat, only: [ :show, :edit, :update ]
+  before_action :set_splat, only: %i[ show edit update ]
 
   def index
     if params[:category_id]

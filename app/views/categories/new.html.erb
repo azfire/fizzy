@@ -1,0 +1,6 @@
+<turbo-frame id="new_catgory">
+  <%= form_with model: [@splat, @category], data: { turbo_frame: "_top" } do |form| %>
+      <%= form.text_field :title, class: "input txt-small", autofocus: "on" %>
+      <%= form.submit "Create Category", hidden: true %>
+  <% end %>
+</turbo-frame>

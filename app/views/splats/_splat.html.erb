@@ -9,4 +9,12 @@
   <% splat.categories.each do | category | %>
     <%= link_to category.title, splats_path(category_id: category.id), class: "splat__bubble splat__meta splat__category" %>
   <% end %>
+
+  <% if splat.categories.count < 3 %>
+    <span class="splat__bubble splat__meta splat__category">
+      <turbo-frame id="new_catgory">
+        <%= link_to "#", new_splat_category_path(splat) %>
+      </turbo-frame>
+    </span>
+  <% end %>
 </div>
