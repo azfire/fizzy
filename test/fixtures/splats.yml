@@ -3,14 +3,14 @@
 one:
   title: The logo isn't big enough
   body: Make the logo bigger.
-  color: dodgerblue
+  color: \#AF2E1B
 
 two:
   title: Layout is broken
   body: The page scrolls horizontally on mobile devices.
-  color: tomato
+  color: \#CC6324
 
 three:
   title: The text is too small
   body: Increase the font size.
-  color: teal
+  color: \#3B4B59
