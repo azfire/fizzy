@@ -25,9 +25,9 @@ class BubblesController < ApplicationController
   end
 
   def create
-    Bubble.create! bubble_params
+    @bubble = Bubble.create! bubble_params
 
-    redirect_to bubbles_path
+    redirect_to bubble_path(@bubble)
   end
 
   def show

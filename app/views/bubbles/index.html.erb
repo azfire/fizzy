@@ -17,8 +17,7 @@
         <% end %>
       <% end %>
     </h1>
-
-    <%= link_to new_bubble_path, class: "btn btn--plain flex-item-justify-end" do %>
+    <%= button_to bubbles_path, method: :post, params: { bubble: { title: "Untitled"} }, class: "btn btn--plain", form_class: "flex-item-justify-end" do %>
       <%= image_tag "bubble-add.svg", aria: { hidden: true }, size: 24 %>
       <span class="for-screen-reader">Create a new bubble</span>
     <% end %>
