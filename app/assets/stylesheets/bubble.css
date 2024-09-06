@@ -242,7 +242,7 @@
   white-space: normal;
 
   @media (hover: hover) {
-    .bubble:has(.bubble__image):hover & {
+    .bubble:has(.bubble__image img:not([src=""])):hover & {
       color: var(--color-ink-reversed);
       text-shadow: 0 0 0.2em var(--bubble-color), 0 0 0.2em var(--bubble-color), 0 0 0.2em var(--bubble-color);
       position: relative;
