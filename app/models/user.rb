@@ -17,7 +17,7 @@ class User < ApplicationRecord
   scope :active, -> { where(active: true) }
 
   def initials
-    name.scan(/\b\w/).join
+    name.to_s.scan(/\b\p{L}/).join.upcase
   end
 
   def deactivate

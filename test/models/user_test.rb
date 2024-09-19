@@ -5,16 +5,22 @@ class UserTest < ActiveSupport::TestCase
     user = User.create! \
       account: accounts("37s"),
       name: "Victor Cooper",
-      email_address: "victor@37signals.com",
+      email_address: "victor@hey.com",
       password: "secret123456"
 
     assert_equal accounts("37s"), user.account
-    assert_equal user, User.authenticate_by(email_address: "victor@37signals.com", password: "secret123456")
+    assert_equal user, User.authenticate_by(email_address: "victor@hey.com", password: "secret123456")
   end
 
   test "deactivate" do
     assert_changes -> { users(:jz).active? }, from: true, to: false do
       users(:jz).deactivate
     end
+  end
+
+  test "initials" do
+    assert_equal "JF", User.new(name: "jason fried").initials
+    assert_equal "DHH", User.new(name: "David Heinemeier Hansson").initials
+    assert_equal "ÉLH", User.new(name: "Éva-Louise Hernández").initials
   end
 end
