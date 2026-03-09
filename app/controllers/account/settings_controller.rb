@@ -1,4 +1,6 @@
 class Account::SettingsController < ApplicationController
+  wrap_parameters :account
+
   before_action :ensure_admin, only: :update
   before_action :set_account
 
@@ -8,7 +10,11 @@ class Account::SettingsController < ApplicationController
 
   def update
     @account.update!(account_params)
-    redirect_to account_settings_path
+
+    respond_to do |format|
+      format.html { redirect_to account_settings_path }
+      format.json { head :no_content }
+    end
   end
 
   private
