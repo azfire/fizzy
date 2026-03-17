@@ -22,13 +22,6 @@ GIT
       rainbow
 
 GIT
-  remote: https://github.com/basecamp/lexxy
-  revision: b7f0f1429df5fa425eac043191ae2b65edee7488
-  specs:
-    lexxy (0.7.6.beta)
-      rails (>= 8.0.2)
-
-GIT
   remote: https://github.com/basecamp/queenbee-plugin
   revision: 14312a940471e20617b38cdec7c092a01567d18b
   specs:
@@ -59,6 +52,15 @@ GIT
     yabeda-activejob (0.6.0)
       rails (>= 6.1)
       yabeda (~> 0.6)
+
+GIT
+  remote: https://github.com/hotwired/turbo-rails.git
+  revision: 93ce5bc461cd71af1797e79fcd7e09a19242d080
+  branch: offline-cache
+  specs:
+    turbo-rails (2.0.23)
+      actionpack (>= 7.1.0)
+      railties (>= 7.1.0)
 
 GIT
   remote: https://github.com/rails/rails.git
@@ -365,6 +367,8 @@ GEM
       logger (~> 1.6)
     letter_opener (1.10.0)
       launchy (>= 2.2, < 4)
+    lexxy (0.8.5.beta)
+      rails (>= 8.0.2)
     lint_roller (1.1.0)
     logger (1.7.0)
     loofah (2.25.0)
@@ -622,7 +626,6 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.2.0)
-    stripe (18.0.1)
     thor (1.5.0)
     thruster (0.1.18)
     thruster (0.1.18-aarch64-linux)
@@ -633,9 +636,6 @@ GEM
     trilogy (2.10.0)
       bigdecimal
     tsort (0.2.0)
-    turbo-rails (2.0.23)
-      actionpack (>= 7.1.0)
-      railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.2.0)
@@ -724,7 +724,7 @@ DEPENDENCIES
   jbuilder
   kamal
   letter_opener
-  lexxy!
+  lexxy (= 0.8.5.beta)
   mission_control-jobs
   mittens
   mocha
@@ -749,10 +749,9 @@ DEPENDENCIES
   sqlite3 (>= 2.0)
   stackprof
   stimulus-rails
-  stripe (~> 18.0)
   thruster
   trilogy (~> 2.10)
-  turbo-rails
+  turbo-rails!
   useragent!
   vcr
   web-console!

@@ -1,5 +1,5 @@
 class Boards::EntropiesController < ApplicationController
-  wrap_parameters :board
+  wrap_parameters :board, include: [ :auto_postpone_period_in_days ]
 
   include BoardScoped
 
@@ -10,12 +10,14 @@ class Boards::EntropiesController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream
-      format.json { head :no_content }
+      format.json { render "boards/show", status: :ok }
     end
+  rescue ActiveRecord::RecordInvalid
+    head :unprocessable_entity
   end
 
   private
     def entropy_params
-      params.expect(board: [ :auto_postpone_period ])
+      params.expect(board: [ :auto_postpone_period_in_days ])
     end
 end
